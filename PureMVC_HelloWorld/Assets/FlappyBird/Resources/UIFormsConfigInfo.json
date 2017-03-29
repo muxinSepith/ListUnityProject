@@ -3,23 +3,14 @@
 [
 {"Key":"本配置文件说明"},
 
-{"Key":"LogonUIForm",
-"Value":"UIPrefabs\\LogonUIForm"},
+{"Key":"StartUIForm",
+"Value":"UIForms_Prefabs\\StartUIForm"},
 
-{"Key":"SelectHeroUIForm",
-"Value":"UIPrefabs\\SelectHeroUIForm"},
+{"Key":"GameGuideUIForm",
+"Value":"UIForms_Prefabs\\GameGuideUIForm"},
 
-{"Key":"MainCityUIForm",
-"Value":"UIPrefabs\\MainCityUIForm"},
-
-{"Key":"HeroInfoUIForm",
-"Value":"UIPrefabs\\HeroInfoUIForm"},
-
-{"Key":"MarketUIFrom",
-"Value":"UIPrefabs\\MarketUIFrom"},
-
-{"Key":"PropDetailUIForm",
-"Value":"UIPrefabs\\PropDetailUIForm"}
+{"Key":"GamePlayingUIForm",
+"Value":"UIForms_Prefabs\\GamePlayingUIForm"}
 
 ]
 }

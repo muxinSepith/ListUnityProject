@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SUIFW;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,46 +9,21 @@ using UnityEngine;
 /// Description: 
 /// DateTime: 
 /// </summary>
-public class StartUIForm : MonoBehaviour {
+public class StartUIForm : BaseUIForm
+{
 
-	#region Public Variables				//公共变量区域
-	
-	
-	
-	#endregion
+    private void Awake()
+    {
+        //按钮注册
+        RigisterButtonObjectEvent("ImgBackground", p =>
+             OpenUIForm("GameGuideUIForm")
+        );
+    }
 
+    private void Start()
+    {
+        //启动MVC框架
+        new ApplicationFacade();
+    }
 
-	#region Private Variables			//私有变量区域
-	
-	
-	
-	#endregion
-	
-	
-	#region MonoBehaviour CallBacks		//回调函数区域
-
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
-
-    #endregion
-	
-	
-	#region Public Methods				//公共方法区域
-	
-	
-	
-    #endregion
-	
-	
-	#region Private Methods			//私有方法区域
-	
-	
-	
-    #endregion
-	
 }

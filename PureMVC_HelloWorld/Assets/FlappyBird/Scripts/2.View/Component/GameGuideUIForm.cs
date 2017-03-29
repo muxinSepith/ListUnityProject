@@ -1,53 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SUIFW;
 
 /// <summary>
 /// FileName: GameGuideUIForm.cs
 /// Author: 
-/// Description: 
+/// Description: 游戏玩法介绍
 /// DateTime: 
 /// </summary>
-public class GameGuideUIForm : MonoBehaviour {
+public class GameGuideUIForm : BaseUIForm
+{
 
-	#region Public Variables				//公共变量区域
-	
-	
-	
-	#endregion
+    private void Awake()
+    {
+        //本窗体类型
+        CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
 
+        //注册按钮事件
+        RigisterButtonObjectEvent("BtnGuideOK", p =>
+             OpenUIForm("GamePlayingUIForm")
 
-	#region Private Variables			//私有变量区域
-	
-	
-	
-	#endregion
-	
-	
-	#region MonoBehaviour CallBacks		//回调函数区域
+            //MVC启动命令
+            //todo...
+            );
+    }
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
-
-    #endregion
-	
-	
-	#region Public Methods				//公共方法区域
-	
-	
-	
-    #endregion
-	
-	
-	#region Private Methods			//私有方法区域
-	
-	
-	
-    #endregion
-	
 }
