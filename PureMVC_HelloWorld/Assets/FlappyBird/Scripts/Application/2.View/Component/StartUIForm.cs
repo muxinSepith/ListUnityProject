@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// FileName: StartUIForm.cs
 /// Author: 
-/// Description: 
+/// Description: 启动MVC框架及按钮
 /// DateTime: 
 /// </summary>
 public class StartUIForm : BaseUIForm
@@ -16,7 +16,7 @@ public class StartUIForm : BaseUIForm
     {
         //按钮注册
         RigisterButtonObjectEvent("ImgBackground", p =>
-             OpenUIForm("GameGuideUIForm")
+             OpenUIForm(ProjectConsts.GameGuideUIForm)
         );
     }
 

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CircleCollider2D))]
 public class Ctrl_HeroControl : MonoBehaviour
 {
 
     //升力
-    public float floUpPower = 3f;
+    public float floUpPower = 5f;
     //2D刚体
     private Rigidbody2D rd2D;
     //主角原始位置
@@ -22,6 +23,9 @@ public class Ctrl_HeroControl : MonoBehaviour
     {
         _IsGameStart = true;
 
+        //恢复小鸟的原始方位
+        transform.position = _VecHeroOriginalPostion;
+
         //启用2D刚体
         EnableRigibody2D();
     }
@@ -30,9 +34,6 @@ public class Ctrl_HeroControl : MonoBehaviour
     public void StopGame()
     {
         _IsGameStart = false;
-
-        //恢复小鸟的原始方位
-        transform.position = _VecHeroOriginalPostion;
 
         //禁用2D刚体
         DisableRigibody2D();
@@ -43,12 +44,15 @@ public class Ctrl_HeroControl : MonoBehaviour
     {
         //保存原始位置
         _VecHeroOriginalPostion = transform.position;
+
         //获取2D刚体
         rd2D = GetComponent<Rigidbody2D>();
+
         //禁用2D刚体
         DisableRigibody2D();
 
-        StartGame();
+        //初始化碰撞器大小
+        GetComponent<CircleCollider2D>().radius = 0.2f;
     }
 
     /// <summary>
@@ -74,6 +78,10 @@ public class Ctrl_HeroControl : MonoBehaviour
 
     private void DisableRigibody2D()
     {
+        //停止转动
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().angularVelocity = 0f;
+
         GetComponent<Rigidbody2D>().isKinematic = true;
     }
 }

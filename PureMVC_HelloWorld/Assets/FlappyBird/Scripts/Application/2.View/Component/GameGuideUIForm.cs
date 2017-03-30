@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SUIFW;
+using PureMVC.Patterns;
 
 /// <summary>
 /// FileName: GameGuideUIForm.cs
@@ -19,11 +20,15 @@ public class GameGuideUIForm : BaseUIForm
 
         //注册按钮事件
         RigisterButtonObjectEvent("BtnGuideOK", p =>
-             OpenUIForm("GamePlayingUIForm")
+        {
+            OpenUIForm(ProjectConsts.GamePlayingUIForm);
 
             //MVC启动命令
-            //todo...
-            );
+            Facade.Instance.SendNotification(ProjectConsts.Reg_StartGameCommand);
+            //对视图层字段初始化
+            Facade.Instance.SendNotification(ProjectConsts.Msg_InitGamePlayingMediatorFiled);
+        }
+        );
     }
 
 }
