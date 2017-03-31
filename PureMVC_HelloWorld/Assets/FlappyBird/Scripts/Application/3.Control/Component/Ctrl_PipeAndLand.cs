@@ -22,7 +22,7 @@ public class Ctrl_PipeAndLand : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //普通PureMVC的通知，游戏结束
-            Facade.Instance.SendNotification("Reg_EndGameCommond");
+            Facade.Instance.SendNotification(ProjectConsts.Reg_EndGameCommond);
         }
     }
 
